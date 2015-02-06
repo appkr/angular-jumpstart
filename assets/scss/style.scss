@@ -1,0 +1,12 @@
+th.cursor,
+span.delete {
+  cursor: pointer;
+  &:hover {
+    color: red;
+  }
+}
+
+footer {
+  padding: 0 30px 15px;
+
+}

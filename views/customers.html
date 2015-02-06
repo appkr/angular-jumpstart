@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>Customers</h1>
+</div>
+
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" id="customer-filter" placeholder="Filter customer name here..." ng-model="customerFilter.name">
+  </div>
+</form>
+
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th ng-click="doSort('name')" class="cursor">Name</th>
+      <th ng-click="doSort('city')" class="cursor">City</th>
+      <th ng-click="doSort('joined')" class="cursor">Joined</th>
+      <th ng-click="doSort('orderTotal')" class="cursor">Order Total</th>
+      <th>Orders</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="customer in customers | filter:customerFilter | orderBy:sortBy:reverse" class="repeat-animation">
+      <td>{{customer.name}}</td>
+      <td>{{customer.city | uppercase}}</td>
+      <td>{{customer.joined | date}}</td>
+      <td>{{customer.orderTotal | currency}}</td>
+      <td><a href="#/orders/{{customer.id}}">View Orders</a></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove delete" ng-click="deleteCustomer(customer.id)"></span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p class="help-block">Total customers: {{customers.length}}</p>
+</div>

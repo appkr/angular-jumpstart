@@ -1,0 +1,1 @@
+Follow along [Udemy - AngularJS JumpStart](https://www.udemy.com/angularjs-jumpstart/)

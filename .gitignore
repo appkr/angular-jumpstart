@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+npm-debug.log
+/assets/js/test.js
+/assets/scss/test.scss
+/node_modules
+/vendor
